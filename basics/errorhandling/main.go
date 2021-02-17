@@ -6,6 +6,7 @@ import (
 )
 
 func parseBool(str string) (bool, error) {
+	// use fmt.Errorf to return errors with messages from functions
 	switch str {
 	case "1", "t", "T", "true", "TRUE", "True":
 		return true, nil
@@ -13,7 +14,6 @@ func parseBool(str string) (bool, error) {
 		return false, nil
 	}
 	return false, fmt.Errorf("invalid input %q", str)
-	// use fmt.Errorf to return errors with messages from functions
 }
 
 func main() {
